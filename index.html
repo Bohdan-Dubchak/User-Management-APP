@@ -4,11 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User App</title>
+
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/form.css">
+    <link rel="stylesheet" href="css/components/user-card.css">
+    <link rel="stylesheet" href="css/components/dialog.css">
+
+    <script src="js/main.js"></script>
 </head>
 
 <body>
+    <!-- Основний контейнер -->
+    <div class="container">
+        <!-- Секція форми створення користувача -->
+        <section class="login-section">
+            <h1 class="title">User Manager</h1>
 
+            <div class="fotm-block">
+                <form class="form" data-create-user-form>
+                    <!-- Поле імені -->
+                    <div class="control-field">
+                        <label for="nameId" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="nameId" name="userName" required minlength="2"
+                            maxlength="23" placeholder="Enter name">
+                    </div>
+
+                    <!-- Поле міста -->
+                    <div class="control-field">
+                        <label for="cityId" class="form-label">City</label>
+                        <input type="text" class="form-control" id="cityId" name="userCity" required minlength="2"
+                            maxlength="20" placeholder="Enter city">
+                    </div>
+
+
+                </form>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>
