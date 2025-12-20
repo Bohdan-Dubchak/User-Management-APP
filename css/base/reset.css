@@ -1,0 +1,479 @@
+:root {
+    /* Кольори */
+    --color-primary: #377bcf;
+    --color-primary-hover: #2a5fa3;
+    --color-bg-dark: #20222b;
+    --color-text-light: #fff;
+    --color-text-dark: #000;
+    --color-border: #2f2f2f;
+    --color-error: #ff6b6b;
+    --color-success: #51cf66;
+
+    /* Градієнти */
+    --gradient-bg: linear-gradient(180deg, #4d6f93 0%, #a84545a6 100%);
+
+    /* Розміри */
+    --border-radius: 4px;
+    --border-radius-large: 5px;
+    --gap-small: 2px;
+    --gap-medium: 10px;
+    --gap-large: 20px;
+
+    /* Тіні */
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-card-hover: 0 0 15px 8px var(--color-primary);
+
+    /* Переходи */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+}
+
+/* --------------- БАЗОВІ СТИЛІ --------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: var(--gradient-bg);
+}
+
+/* --------------- КОНТЕЙНЕРИ --------------- */
+.container {
+    padding: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* --------------- ЗАГОЛОВКИ --------------- */
+.title {
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 42px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------- ФОРМИ --------------- */
+.form-block {
+    width: 100%;
+    max-width: 320px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--gap-medium);
+}
+
+.control-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: var(--gap-small);
+}
+
+.form-label {
+    color: var(--color-text-light);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-control {
+    height: 38px;
+    padding: 0 10px;
+    font-size: 18px;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    background-color: var(--color-bg-dark);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-fast);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(55, 123, 207, 0.2);
+}
+
+.form-control:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.form-control--email {
+    text-transform: initial;
+}
+
+.form-control--images {
+    cursor: pointer;
+}
+
+/* Стилі для placeholder */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: none;
+}
+
+/* --------------- КНОПКИ --------------- */
+.btn {
+    height: 40px;
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--color-text-light);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-text-light);
+    outline-offset: 2px;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn {
+    margin: 5px 0 0 0;
+    background-color: var(--color-primary);
+}
+
+.submit-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* --------------- КОНТЕЙНЕР КОРИСТУВАЧІВ --------------- */
+.users-container {
+    margin: 0 auto;
+    padding: var(--gap-large) 0 50px 0;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-medium);
+    flex-wrap: wrap;
+    min-height: 200px;
+}
+
+/* --------------- КАРТКИ КОРИСТУВАЧІВ --------------- */
+.user-card {
+    max-width: 250px;
+    min-width: 250px;
+    height: 280px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-large);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: var(--gradient-bg);
+    color: var(--color-text-light);
+    position: relative;
+    box-shadow: var(--shadow-card);
+    transition: all var(--transition-medium);
+}
+
+.user-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-5px);
+}
+
+.user-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: var(--color-text-light);
+    word-break: break-word;
+}
+
+.user-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.user-card span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    word-break: break-word;
+}
+
+.user-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    margin-top: auto;
+    border-radius: var(--border-radius);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Кнопки на картці */
+.user-edit-btn,
+.user-remove-btn {
+    position: absolute;
+    top: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(5px);
+}
+
+.user-edit-btn {
+    right: 42px;
+}
+
+.user-remove-btn {
+    right: 8px;
+}
+
+.user-edit-btn:hover,
+.user-remove-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.15);
+    border-color: var(--color-text-light);
+}
+
+.user-edit-btn:active,
+.user-remove-btn:active {
+    transform: scale(1);
+}
+
+/* --------------- МОДАЛЬНЕ ВІКНО --------------- */
+.edit-form-dialog {
+    margin: 0;
+    position: fixed;
+    min-width: 340px;
+    max-width: 90vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-large);
+    padding: 20px;
+    background: var(--color-text-light);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.edit-form-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.edit-form-dialog .form-label {
+    color: var(--color-text-dark);
+}
+
+.edit-form-dialog .form-control {
+    color: var(--color-text-dark);
+}
+
+.edit-form-dialog .close-edit-form-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 6px 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 18px;
+    transition: all var(--transition-fast);
+}
+
+.edit-form-dialog .close-edit-form-btn:hover {
+    background: rgba(255, 0, 0, 0.2);
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* --------------- СТАНИ ЗАВАНТАЖЕННЯ --------------- */
+.loading {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 20px;
+    padding: 40px 20px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.error {
+    text-align: center;
+    color: var(--color-error);
+    font-size: 18px;
+    padding: 40px 20px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: var(--border-radius-large);
+    border: 2px solid var(--color-error);
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 18px;
+    padding: 40px 20px;
+    opacity: 0.8;
+}
+
+/* --------------- ГОРИЗОНТАЛЬНА ЛІНІЯ --------------- */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    margin: 30px 0;
+}
+
+/* --------------- АДАПТИВНІСТЬ --------------- */
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .form-block {
+        max-width: 100%;
+    }
+
+    .user-card {
+        max-width: 100%;
+        min-width: 280px;
+    }
+
+    .edit-form-dialog {
+        min-width: 90vw;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .user-card {
+        min-width: 100%;
+    }
+
+    .users-container {
+        padding: 15px 10px 30px 10px;
+    }
+}
+
+/* --------------- АНІМАЦІЇ --------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* --------------- ACCESSIBILITY --------------- */
+.btn:focus-visible,
+.form-control:focus-visible,
+.user-edit-btn:focus-visible,
+.user-remove-btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Покращена видимість для людей з вадами зору */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* --------------- УТИЛІТИ --------------- */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --------------- СТИЛІ СКРОЛБАРА (опціонально) --------------- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-hover);
+}
