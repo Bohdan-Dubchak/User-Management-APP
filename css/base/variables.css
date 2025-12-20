@@ -10,7 +10,7 @@
     --color-success: #51cf66;
 
     /* Градієнти */
-    --gradient-bg: linear-gradient(180deg, #4d6f93 0%, #a84545a6 100%);
+    background: linear-gradient(365deg, rgba(20, 9, 135, 1) 0%, rgba(14, 14, 181, 1) 35%, rgba(9, 152, 181, 1) 100%);
 
     /* Розміри */
     --border-radius: 4px;
