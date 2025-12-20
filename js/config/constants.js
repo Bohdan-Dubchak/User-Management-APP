@@ -1,6 +1,6 @@
 /**API URL, селектори, текс повідомлень*/
 
-// AIP конфігурація 
+// API конфігурація 
 export const API_CONFIG = {
     BASE_URL: "https://693c9d53b762a4f15c40ebcc.mockapi.io/user"
 };
@@ -8,9 +8,9 @@ export const API_CONFIG = {
 // Селектори DOM елементів
 export const SELECTORS = {
     createForm: "[data-create-user-form]",
-    userComtainer: "[data-user-container]",
+    usersContainer: "[data-users-container]",
     editDialog: "[data-edit-user-form-dialog]",
-    romoveBtn: "data-user-remove-btn",
+    removeBtn: "data-user-remove-btn",
     editBtn: "data-user-edit-btn"
 };
 
@@ -20,10 +20,10 @@ export const MESSAGES = {
     SUCCESS_EDIT: "КОРИСТУВАЧ УСПІШНО РЕДАГОВАНИЙ",
     SUCCESS_DELETE: "КОРИСТУВАЧ УСПІШНО ВИДАЛЕНИЙ",
     CONFIRM_DELETE: "Ви дійсно хочете видалити цього користувача?",
-    ERROR_CREATE: "ПОМИЛКА при стверенні користувача",
+    ERROR_CREATE: "ПОМИЛКА при створенні користувача",
     ERROR_EDIT: "ПОМИЛКА при редагуванні користувача",
     ERROR_DELETE: "ПОМИЛКА при видаленні користувача",
-    ERROR_FETCH: "ПОМИЛКА при завантаженні користувача"
+    ERROR_FETCH: "ПОМИЛКА при завантаженні користувачів"
 };
 
 // Валідація

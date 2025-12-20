@@ -23,14 +23,14 @@ class Store {
     }
 
     // Оновити користувача
-    updateUSer(updatedUser) {
+    updateUser(updatedUser) {
         this.users = this.users.map(user => user.id === updatedUser.id ? updatedUser : user);
         this.notify();
     }
 
     // Видалити користувача
     removeUser(userId) {
-        this.user = this.user.filter(user => userId.id !== userId);
+        this.users = this.users.filter(user => userId.id !== userId);
         this.notify();
     }
 
