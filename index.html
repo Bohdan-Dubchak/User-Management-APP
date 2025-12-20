@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/components/user-card.css">
     <link rel="stylesheet" href="css/components/dialog.css">
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <section class="login-section">
             <h1 class="title">User Manager</h1>
 
-            <div class="fotm-block">
+            <div class="form-block">
                 <form class="form" data-create-user-form>
                     <!-- Поле імені -->
                     <div class="control-field">
@@ -101,7 +101,7 @@
     </div>
 
     <!-- Модальне вікно для редагування користувача -->
-    <dialog class="edit-form-dialog" date-edit-user-form-dialog>
+    <dialog class="edit-form-dialog" data-edit-user-form-dialog>
         <!-- Форма редагування буде додана динамічно через JavaScript -->
     </dialog>
 </body>
